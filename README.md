@@ -25,6 +25,7 @@ Follow the on-screen instructions to perform calculations.
 5. Exit: Exits the application.
 
 #Example
+
 ![image](https://github.com/user-attachments/assets/4957afc1-5901-4de2-8220-696fc5cf9759)
 
 #Requirements
