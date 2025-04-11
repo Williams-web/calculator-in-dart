@@ -1,19 +1,20 @@
 import 'dart:io';
-void main(){
+
+void main() {
   Calculator calc = Calculator();
   var continueRunning = true;
 
-while(continueRunning){
-  print("Menu \n");
-  print("1. Addition \n");
-  print("2. Subtraction \n");
-  print("3. Multiplication \n");
-  print("4. Division \n");
-  print("5. Exit \n");
-  print("Enter your choice: ");
-  int choice = int.parse(stdin.readLineSync() ?? '0');
+  while (continueRunning) {
+    print("Menu \n");
+    print("1. Addition \n");
+    print("2. Subtraction \n");
+    print("3. Multiplication \n");
+    print("4. Division \n");
+    print("5. Exit \n");
+    print("Enter your choice: ");
+    int choice = int.parse(stdin.readLineSync() ?? '0');
 
-    switch(choice){
+    switch (choice) {
       case 1:
         calc.add();
         break;
@@ -34,12 +35,11 @@ while(continueRunning){
         print("Invalid choice");
         return;
     }
-
-}
+  }
 }
 
 class Calculator {
-  void add(){
+  void add() {
     print("Enter the first number");
     int a = int.tryParse(stdin.readLineSync() ?? '0') ?? 0;
     print("Enter the second number");
@@ -47,7 +47,7 @@ class Calculator {
     print("$a + $b = ${a + b} \n");
   }
 
-  void subtract(){
+  void subtract() {
     print("Enter the first number");
     int a = int.tryParse(stdin.readLineSync() ?? '0') ?? 0;
     print("Enter the second number");
@@ -55,7 +55,7 @@ class Calculator {
     print("$a - $b = ${a - b}\n");
   }
 
-  void multiply(){
+  void multiply() {
     print("Enter the first number");
     int a = int.parse(stdin.readLineSync() ?? '0');
     print("Enter the second number");
@@ -63,12 +63,15 @@ class Calculator {
     print("$a * $b = ${a * b}\n");
   }
 
-  void divide(){
+  void divide() {
     print("Enter the first number");
     double a = double.parse(stdin.readLineSync() ?? '0');
     print("Enter the second number");
     double b = double.parse(stdin.readLineSync() ?? '0');
-    print("$a / $b = ${a / b}\n");
+    if (b == 0) {
+      print("Error: Division by zero is not allowed.\n");
+    } else {
+      print("$a / $b = ${a / b}\n");
+    }
   }
-
 }
